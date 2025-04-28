@@ -19,3 +19,20 @@ themeToggleButton.addEventListener('click', () => {
         document.documentElement.style.setProperty('--button-text-color', '#ffffff');
     }
 });
+
+
+const figures = document.querySelectorAll('.gallery figure');
+const imageInfo = document.getElementById('image-info');
+
+
+figures.forEach(figure => {
+    figure.addEventListener('mouseover', () => {
+        const img = figure.querySelector('img');
+        imageInfo.textContent = img.alt; // Exibe o alt da imagem
+        imageInfo.style.display = 'block'; // Mostra a div com a informação
+    });
+
+    figure.addEventListener('mouseout', () => {
+        imageInfo.style.display = 'none'; // Esconde a div ao sair
+    });
+});
